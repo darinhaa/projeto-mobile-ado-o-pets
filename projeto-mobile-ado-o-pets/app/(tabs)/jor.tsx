@@ -7,7 +7,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
 
-export default function HomeScreen() {
+export default function HomeScreen() 
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -26,6 +26,14 @@ export default function HomeScreen() {
         <ThemedText>
           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
           Press{' '}
+        <ThemedText type="title">Pip | 3 meses</ThemedText>
+        
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+       <br /> <ThemedText type="subtitle">Curitiba, Batel</ThemedText>
+        <ThemedText>
+          <ThemedText type="defaultSemiBold"></ThemedText> 
+          {' '}
           <ThemedText type="defaultSemiBold">
             {Platform.select({
               ios: 'cmd + d',
@@ -34,12 +42,17 @@ export default function HomeScreen() {
             })}
           </ThemedText>{' '}
           to open developer tools.
+              web: '',
+            })}
+          </ThemedText>{' '}
+
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger>
             <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+            <ThemedText type="subtitle">28/07/2025</ThemedText>
           </Link.Trigger>
           <Link.Preview />
           <Link.Menu>
@@ -72,6 +85,16 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
           <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+        
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">História de Pip</ThemedText>
+        <ThemedText>
+        
+          <ThemedText type="defaultSemiBold">
+Pip é um hamster sírio de 3 meses, um pequeno sonhador de personalidade tranquila e curiosa. 
+Seu maior desejo é uma família paciente que entenda sua natureza gentil, oferecendo um ambiente calmo onde possa se sentir seguro para ser ele mesmo. </ThemedText> 
+          
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
@@ -83,6 +106,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+    
   },
   stepContainer: {
     gap: 8,
