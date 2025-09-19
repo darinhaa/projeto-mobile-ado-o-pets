@@ -22,7 +22,6 @@ export default function HomeScreen() {
           source={require('@/assets/images/ze pug.jpg')}
           style={styles.ZePug}
         />
-        
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title"></ThemedText>
         
@@ -107,7 +106,9 @@ const styles = StyleSheet.create({
     shadowRadius: 34,
     shadowColor: "#ffffff"
   },
-
+  body: {
+    backgroundColor: ""
+  }
  
 });
  
