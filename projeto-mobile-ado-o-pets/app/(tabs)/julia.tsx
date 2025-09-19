@@ -106,9 +106,7 @@ const styles = StyleSheet.create({
     shadowRadius: 34,
     shadowColor: "#ffffff"
   },
-  body: {
-    backgroundColor: ""
-  }
+ 
  
 });
  
