@@ -6,6 +6,7 @@ import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
+import { HeaderBackground } from '@react-navigation/elements';
 
 export default function HomeScreen() {
   return (
@@ -13,27 +14,33 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: '#ffffff', dark: '#ffffff' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-         
-          
+          source={require('@/assets/images/petlogo.png')}
+          style={styles.reactLogo}
         />
       }>
+         <Image
+          source={require('@/assets/images/ze pug.jpg')}
+          style={styles.ZePug}
+        />
+        
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">ZÉ PUG | 2 ANOS</ThemedText>
-        <HelloWave />
+        <ThemedText type="title"></ThemedText>
+        
+        
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">cachorro | macho | filhote | porte pequeno </ThemedText>
+        <ThemedText type="subtitle"> </ThemedText>
         <ThemedText>
           <ThemedText type="defaultSemiBold">
           </ThemedText>{' '}
-          Capão raso, Curitiba
+         
         </ThemedText>
       </ThemedView>
+      
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger>
-            <ThemedText type="subtitle">A HISTÓRIA DE ZÉ</ThemedText>
+            <ThemedText type="subtitle"></ThemedText>
           </Link.Trigger>
           <Link.Preview />
           <Link.Menu>
@@ -54,15 +61,16 @@ export default function HomeScreen() {
           </Link.Menu>
         </Link>
 
-        <ThemedText>
-          {`Zé é um pug de 2 anos, cheio de energia e amor para dar. Ele adora explorar o mundo, correr atrás de sua bolinha e aproveitar cada momento de diversão. Mas no final do dia, o que ele mais quer é estar ao lado de quem ama, recebendo carinho e espalhando alegria.`}
-        </ThemedText>
+       
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle"></ThemedText>
         <ThemedText>
+          
           {`
-Adote o Zé e traga mais felicidade para a sua vida! `}
+ `}
+
+      
           
         </ThemedText>
       </ThemedView>
@@ -80,15 +88,31 @@ const styles = StyleSheet.create({
   stepContainer: {
     gap: 1,
     marginBottom: 4,
+   
   },
   reactLogo: {
-    height: 17,
-    width: 90,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+    height: 178,
+    width: 290,
+    bottom: 40,
+    left: 40,
+    position:'absolute'
+    
   },
+  ZePug: {
+    height: 200,
+    width: 295,
+    bottom: 10,
+    left: 5,
+    borderRadius: 15,
+    shadowRadius: 34,
+    shadowColor: "#ffffff"
+  },
+
+ 
 });
+ 
+
+
 
 
 
