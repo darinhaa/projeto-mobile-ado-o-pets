@@ -1,12 +1,16 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
 
-import { HelloWave } from '@/components/hello-wave';
+
+
+
+
+
+import { Image } from 'expo-image';
+import { StyleSheet } from 'react-native';
+
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
-import { HeaderBackground } from '@react-navigation/elements';
 
 export default function HomeScreen() {
   return (
@@ -23,23 +27,27 @@ export default function HomeScreen() {
           style={styles.ZePug}
         />
       <ThemedView style={styles.titleContainer}>
+      <ThemedText type="title">ZÉ PUG | 2 ANOS</ThemedText>
         <ThemedText type="title"></ThemedText>
         
         
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle"> </ThemedText>
+        <ThemedText type="subtitle">  CACHORRO | MACHO | FILHOTE | PORTE PEQUENO
+
+</ThemedText>
         <ThemedText>
           <ThemedText type="defaultSemiBold">
-          </ThemedText>{' '}
-         
+          </ThemedText>{'Curitiba, Capão Raso'}
         </ThemedText>
+        
+        
       </ThemedView>
       
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger>
-            <ThemedText type="subtitle"></ThemedText>
+            <ThemedText type="defaultSemiBold">09/07/2025</ThemedText>
           </Link.Trigger>
           <Link.Preview />
           <Link.Menu>
@@ -64,6 +72,7 @@ export default function HomeScreen() {
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle"></ThemedText>
+    
         <ThemedText>
           
           {`
@@ -71,7 +80,7 @@ export default function HomeScreen() {
 
       
           
-        </ThemedText>
+      </ThemedText>{' '}
       </ThemedView>
     </ParallaxScrollView>
     
@@ -109,11 +118,3 @@ const styles = StyleSheet.create({
  
  
 });
- 
-
-
-
-
-
-
-
