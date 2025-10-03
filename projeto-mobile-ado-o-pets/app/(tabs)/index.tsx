@@ -18,28 +18,29 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">Seja bem vindo(a)!</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+        <ThemedText type="subtitle">Encontre seu mais novo animal aqui!</ThemedText>
         <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
+           <ThemedText type="defaultSemiBold">Nosso site está cheio de animais esperando por uma família
+          Vem dar uma olhada!</ThemedText> 
+          {' '}
           <ThemedText type="defaultSemiBold">
             {Platform.select({
               ios: 'cmd + d',
               android: 'cmd + m',
-              web: 'F12',
+              web: '',
             })}
           </ThemedText>{' '}
-          to open developer tools.
+         
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+            <ThemedText type="subtitle">Porque adotar?</ThemedText>
           </Link.Trigger>
           <Link.Preview />
           <Link.Menu>
@@ -61,7 +62,7 @@ export default function HomeScreen() {
         </Link>
 
         <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
+          {`Nesse exato momento, existem muitos animais esperando um humano para chamar de seu e um lar onde serão amados e cuidados..`}
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
