@@ -27,13 +27,13 @@ export default function TabTwoScreen() {
           style={{
             fontFamily: Fonts.rounded,
           }}>
-          Explore
+          Aumigos para adoção:
         </ThemedText>
       </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
+      <ThemedText>Clique, e veja mais informações:</ThemedText>
+      <Collapsible title="Zé pug">
         <ThemedText>
-          This app has two screens:{' '}
+          Zé Pug{' '}
           <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
           <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
         </ThemedText>
@@ -45,13 +45,13 @@ export default function TabTwoScreen() {
           <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
+      <Collapsible title="Cibele">
         <ThemedText>
           You can open this project on Android, iOS, and the web. To open the web version, press{' '}
           <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
         </ThemedText>
       </Collapsible>
-      <Collapsible title="Images">
+      <Collapsible title="Pip ">
         <ThemedText>
           For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
           <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
@@ -65,7 +65,7 @@ export default function TabTwoScreen() {
           <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Light and dark mode components">
+      <Collapsible title="Zoe">
         <ThemedText>
           This template has light and dark mode support. The{' '}
           <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect

@@ -71,16 +71,15 @@ export default function HomeScreen() {
        
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle"></ThemedText>
+        <ThemedText type="subtitle">HISTÓRIA DE ZOE </ThemedText>
     
         <ThemedText>
           
           {`
+Adote o Zé e traga mais felicidade para a sua vida!
  `}
-
-      
           
-      </ThemedText>{' '}
+      </ThemedText>{'Zé é um pug de 2 anos, cheio de energia e amor para dar. Ele adora explorar o mundo, correr atrás de sua bolinha e aproveitar cada momento de diversão. Mas no final do dia, o que ele mais quer é estar ao lado de quem ama, recebendo carinho e espalhando alegria. '}
       </ThemedView>
     </ParallaxScrollView>
     
@@ -115,6 +114,6 @@ const styles = StyleSheet.create({
     shadowRadius: 34,
     shadowColor: "#ffffff"
   },
- 
+  
  
 });

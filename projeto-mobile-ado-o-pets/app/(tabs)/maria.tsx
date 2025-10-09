@@ -37,7 +37,7 @@ export default function HomeScreen() {
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger>
-            <ThemedText type="subtitle"></ThemedText>
+            <ThemedText type="subtitle">Curitiba,Tatuquara</ThemedText>
           </Link.Trigger>
           <Link.Preview />
           <Link.Menu>
