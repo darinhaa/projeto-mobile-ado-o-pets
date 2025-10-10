@@ -5,33 +5,26 @@
 
 
 import { Image } from 'expo-image';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import ParallaxScrollView from '@/components/parallax-scroll-view';
+
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#ffffff', dark: '#ffffff' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/petlogo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-         <Image
-          source={require('@/assets/images/ze pug.jpg')}
-          style={styles.ZePug}
-        />
+    <View
+      >
+    
       <ThemedView style={styles.titleContainer}>
       <ThemedText type="title">ZÉ PUG | 2 ANOS</ThemedText>
         <ThemedText type="title"></ThemedText>
-        
-        
       </ThemedView>
+      <Image
+          source={require('@/assets/images/ze pug.jpg')}
+          style={styles.ZePug}
+        />
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">  CACHORRO | MACHO | FILHOTE | PORTE PEQUENO
 
@@ -76,25 +69,30 @@ export default function HomeScreen() {
         <ThemedText>
           
           {`
-Adote o Zé e traga mais felicidade para a sua vida!
+Zé é um pug de 2 anos, cheio de energia e amor para dar. Ele adora explorar o mundo, correr atrás de sua bolinha e aproveitar cada momento de diversão. Mas no final do dia, o que ele mais quer é estar ao lado de quem ama, recebendo carinho e espalhando alegria.
  `}
           
-      </ThemedText>{'Zé é um pug de 2 anos, cheio de energia e amor para dar. Ele adora explorar o mundo, correr atrás de sua bolinha e aproveitar cada momento de diversão. Mas no final do dia, o que ele mais quer é estar ao lado de quem ama, recebendo carinho e espalhando alegria. '}
+      </ThemedText>{''}
       </ThemedView>
-    </ParallaxScrollView>
+    </View>
     
   );
+  
 }
 
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 3,
+    gap: 15,
+
+    
   },
   stepContainer: {
-    gap: 1,
+    gap: 25,
     marginBottom: 4,
+
+    
    
   },
   reactLogo: {
@@ -106,14 +104,15 @@ const styles = StyleSheet.create({
     
   },
   ZePug: {
-    height: 200,
-    width: 295,
+    height: 250,
+    width: 250,
     bottom: 10,
-    left: 5,
+    left: 15,
     borderRadius: 15,
     shadowRadius: 34,
     shadowColor: "#ffffff"
   },
+  
   
  
 });
