@@ -64,9 +64,7 @@ export default function HomeScreen() {
         <ThemedText type="subtitle">HISTÓRIA DE ZOE</ThemedText>
         <ThemedText>
          
-          {`
- Adote a Zoe e traga mais felicidade para a sua vida!
- `}
+
 
   
          
