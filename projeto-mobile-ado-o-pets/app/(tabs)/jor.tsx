@@ -11,6 +11,7 @@ export default function HomeScreen() {
           source={require('@/assets/images/pip.png')}
           style={estilos.imagemPet}
         />
+<<<<<<< HEAD
       </View>
       <ThemedText style={estilos.nomePet}>PIP | 3 MESES
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="16" fill="black" className="bi bi-share" viewBox="0 0 20 16">
@@ -24,6 +25,49 @@ export default function HomeScreen() {
           <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
         </svg>
       </ThemedText>
+=======
+      <ThemedView style={styles.titleContainer}>
+        <ThemedText type="title">PIP | 3 MESES</ThemedText>
+        
+        
+        
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Curitiba, Batel<br></br></ThemedText>
+        <ThemedText>
+            <ThemedText type='subtitle'>28/07/2025</ThemedText>
+            <br></br>
+            <ThemedText type='title'>HISTÓRIA DE PIP</ThemedText>
+          <ThemedText type="defaultSemiBold">
+          </ThemedText>{' '}
+         
+        </ThemedText>
+      </ThemedView>
+      
+      <ThemedView style={styles.stepContainer}>
+        <Link href="/modal">
+          <Link.Trigger>
+            <ThemedText type="subtitle"></ThemedText>
+          </Link.Trigger>
+          <Link.Preview />
+          <Link.Menu>
+            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
+            <Link.MenuAction
+              title="Share"
+              icon="square.and.arrow.up"
+              onPress={() => alert('Share pressed')}
+            />
+            <Link.Menu title="More" icon="ellipsis">
+              <Link.MenuAction
+                title="Delete"
+                icon="trash"
+                destructive
+                onPress={() => alert('Delete pressed')}
+              />
+            </Link.Menu>
+          </Link.Menu>
+        </Link>
+>>>>>>> b958c1e48e8207ad68b7721d8974ea0693e91f70
 
 
 
