@@ -24,6 +24,7 @@ export default function HomeScreen() {
         <ThemedText type="title">PIP | 3 MESES</ThemedText>
         
         
+        
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Curitiba, Batel<br></br></ThemedText>

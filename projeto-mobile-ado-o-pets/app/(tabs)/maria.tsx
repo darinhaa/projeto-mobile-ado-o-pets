@@ -29,7 +29,7 @@ export default function HomeScreen() {
         <ThemedText type="subtitle">CACHORRO | FÊMEA | FILHOTE | PORTE MÉDIO</ThemedText>
         <ThemedText>
           <ThemedText type="defaultSemiBold">
-          </ThemedText>{' '}
+          </ThemedText>{' Curitiba,Tatuquara'}
          
         </ThemedText>
       </ThemedView>
@@ -37,7 +37,7 @@ export default function HomeScreen() {
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger>
-            <ThemedText type="subtitle">Curitiba,Tatuquara</ThemedText>
+            <ThemedText type="subtitle">29/08/2025</ThemedText>
           </Link.Trigger>
           <Link.Preview />
           <Link.Menu>
@@ -61,15 +61,20 @@ export default function HomeScreen() {
        
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle"></ThemedText>
+        <ThemedText type="subtitle">HISTÓRIA DE ZOE</ThemedText>
         <ThemedText>
          
           {`
+ Adote a Zoe e traga mais felicidade para a sua vida!
  `}
 
-     
+  
          
-        </ThemedText>
+        </ThemedText>Zoe, uma vira-lata de 5 anos,é sábia, tranquila e cheia de amor para dar.
+        Sobrevivente das ruas,
+         mas sem rancor no coração,
+        seu maior sonho é um lar tranquilo para chamar de seu. É castrada, vacinada e educada,
+         e esta pronta para ser sua companheira leal e grata.
       </ThemedView>
     </ParallaxScrollView>
    
