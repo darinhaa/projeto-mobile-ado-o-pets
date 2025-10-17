@@ -1,113 +1,151 @@
-import { Image } from 'expo-image';
-import { StyleSheet } from 'react-native';
-
-import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
-
+import { Image } from 'expo-image';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#ffffff', dark: '#ffffff' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/petlogo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-         <Image
-          source={require('@/assets/images/pip.png')}
-          style={styles.pip}
-        />
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">PIP | 3 MESES</ThemedText>
-        
-        
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Curitiba, Batel<br></br></ThemedText>
-        <ThemedText>
-            <ThemedText type='subtitle'>28/07/2025</ThemedText>
-            <br></br>
-            <ThemedText type='title'>HISTÓRIA DE PIP</ThemedText>
-          <ThemedText type="defaultSemiBold">
-          </ThemedText>{' '}
-         
-        </ThemedText>
-      </ThemedView>
-      
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle"></ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+return (
 
-       
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle"></ThemedText>
-        <ThemedText>
-          
-          {`
- `}
 
-      
-          
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-    
-  );
+<View>
+
+<Image
+source={require('@/assets/images/pip.png')}
+style={estilos.imagemPet}
+/>
+
+
+
+
+<br /><ThemedText style={estilos.nomePet}>PIP | 3 MESES</ThemedText>
+
+
+
+
+
+
+<ThemedText style={estilos.local}>Curitiba, Batel</ThemedText>
+<ThemedText style={estilos.data}>28/07/2025</ThemedText>
+
+
+
+<ThemedText style={estilos.tituloHistoria}>HISTÓRIA DE PIP</ThemedText>
+<ThemedText style={estilos.textoHistoria}>
+Pip é um hamster sírio de 3 meses, um pequeno sonhador de personalidade
+tranquila e curiosa. Seu maior desejo é uma família paciente que entenda
+sua natureza gentil, oferecendo um ambiente calmo onde possa se sentir
+seguro para ser ele mesmo.
+</ThemedText>
+<ThemedText style={estilos.destaque}>
+Adote o Pip e traga mais felicidade para a sua vida!
+</ThemedText>
+<TouchableOpacity style={estilos.button} onPress={() => alert('Quero Adotar!')}>
+        <ThemedText style={estilos.buttonText}>QUERO ADOTAR!</ThemedText>
+      </TouchableOpacity>
+
+</View>
+);
 }
 
-const styles = StyleSheet.create({
-    
-  titleContainer: {
-    flexDirection: 'row',
+const estilos = StyleSheet.create({
+
+  button: {
+    backgroundColor: '#ff4081', 
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 25, 
     alignItems: 'center',
-    gap: 3,
+    justifyContent: 'center',
+    marginTop: 20, 
   },
-  stepContainer: {
-    gap: 1,
-    marginBottom: 4,
-   
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+    textTransform: 'uppercase', 
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 40,
-    left: 40,
-    position:'absolute'
-    
-  },
-  pip: {
-    height: 200,
-    width: 295,
-    bottom: 10,
-    left: 5,
-    borderRadius: 15,
-    shadowRadius: 34,
-    shadowColor: "#ffffff"
-  },
- 
- 
+
+containerTitulo: {
+flexDirection: 'row',
+alignItems: 'center',
+marginLeft: 20,
+marginTop: 10,
+},
+
+
+nomePet: {
+fontSize: 20,
+fontWeight: '700',
+color: '#D4B200',
+textTransform: 'uppercase',
+marginLeft: 20
+},
+
+idade: {
+fontSize: 18,
+fontWeight: '600',
+color: '#D4B200',
+marginLeft: 6,
+},
+
+imagemPet: {
+height: 200,
+width: 250,
+bottom: 10,
+left: 77,
+borderRadius: 15,
+shadowRadius: 34,
+shadowColor: 'black',
+},
+
+containerInfo: {
+marginLeft: 20,
+marginTop: 10,
+marginBottom: 10,
+
+},
+
+local: {
+fontSize: 16,
+fontWeight: '500',
+color: '#333',
+marginLeft: 20
+},
+
+data: {
+fontSize: 14,
+color: '#333',
+marginTop: 2,
+marginLeft: 20
+},
+
+containerHistoria: {
+paddingHorizontal: 20,
+marginTop: 10,
+
+},
+
+tituloHistoria: {
+fontSize: 16,
+fontWeight: '700',
+color: '#E91E63',
+marginBottom: 8,
+marginLeft: 20
+},
+
+textoHistoria: {
+fontSize: 13,
+lineHeight: 23,
+color: 'black',
+marginBottom: 12,
+marginLeft: 20
+},
+
+destaque: {
+fontSize: 15,
+color: '#fff',
+backgroundColor: '#ff4081',
+textAlign: 'center',
+paddingVertical: 3,
+borderRadius: 100,
+fontWeight: '600',
+},
 });
