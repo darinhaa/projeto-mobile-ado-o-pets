@@ -6,16 +6,23 @@ export default function HomeScreen() {
 return (
 
 
+
+
 <ScrollView style={estilos.view}>
+<View style={estilos.logo}>
+        <Image
+          source={require('@/assets/images/logo_aumigo.png')}
+          style={estilos.superior}
+        />
+      </View>
+
       <View style={estilos.imagem}>
+
         <Image
           source={require('@/assets/images/vira_lata_zoe.webp')}
           style={estilos.imagemPet}
         />
       </View>
-
-
-
 <br /><ThemedText style={estilos.nomePet}>ZOE | 5 ANOS
 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="black" className="16" viewBox="0 0 20 16">
   <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
@@ -30,24 +37,17 @@ return (
   <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
 </svg>
 </ThemedText>
-
-
-
-
-
-
+      
 <ThemedText style={estilos.local}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" className="bi bi-geo-alt-fill" viewBox="0 0 -40 16">
   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
 </svg> 
- Curitiba, Tatuquara</ThemedText>
-
-<ThemedText style={estilos.data}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="black" className="bi bi-calendar-event-fill" viewBox="0 0 -40 16">
+ <ThemedText>Curitiba, Capão Raso</ThemedText>
+        </ThemedText>
+      <ThemedText style={estilos.data}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" className="bi bi-calendar-event-fill" viewBox="0 0 -40 16">
   <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5"/>
 </svg>
-  29/08/2025</ThemedText>
-
-
-
+<ThemedText>  09/07/2025</ThemedText>
+     </ThemedText>
 <ThemedText style={estilos.tituloHistoria}>HISTÓRIA DE ZOE</ThemedText>
 <ThemedText style={estilos.textoHistoria}>
 Zoe, uma vira-lata de 5 anos,é sábia, tranquila e cheia de amor para dar.
@@ -80,13 +80,15 @@ const estilos = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#ff4080',
-    paddingVertical: 15,
-    paddingHorizontal: 30,
+    backgroundColor: '#EECA06',
+    paddingVertical: 10,
+    paddingHorizontal: 25,
     borderRadius: 25, 
     alignItems: 'center',
-    justifyContent: 'center',
     marginTop: 20, 
+    marginLeft: 30,
+    marginRight: 30, 
+    shadowRadius: 10, 
   },
   buttonText: {
     color: 'white',
@@ -112,7 +114,7 @@ fundo: {
 nomePet: {
 fontSize: 20,
 fontWeight: '700',
-color: '#D4B200',
+color: '#EECA06',
 textTransform: 'uppercase',
 marginLeft: 20
 },
@@ -120,15 +122,35 @@ marginLeft: 20
 idade: {
 fontSize: 18,
 fontWeight: '600',
-color: '#D4B200',
+color: '#EECA06',
 marginLeft: 6,
 },
+
+logo: {
+  height: 0,
+  width: 380,
+  shadowRadius: 20,
+ 
+
+},
+
+
+superior: {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  paddingTop: 20,
+  paddingBottom: 60,
+  shadowRadius: 10
+
+},
+
 
 imagem: {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
-  paddingTop: 20,
+  paddingTop: 115,
   paddingBottom: 20
 },
 
@@ -149,15 +171,16 @@ marginBottom: 10,
 local: {
 fontSize: 16,
 fontWeight: '500',
-color: '#333',
+color: '#EECA06',
 marginLeft: 15,
 },
 
 data: {
 fontSize: 14,
-color: '#555',
+color: '#EECA06',
 marginTop: 2,
-marginLeft: 20
+marginLeft: 20,
+fontWeight: 'bold'
 },
 
 containerHistoria: {
@@ -169,26 +192,31 @@ marginTop: 10,
 tituloHistoria: {
 fontSize: 16,
 fontWeight: '700',
-color: '#E91E63',
+color: '#FF71B5',
 marginBottom: 8,
-marginLeft: 20
+marginLeft: 20, 
 },
 
 textoHistoria: {
-fontSize: 13,
+fontSize: 16,
 lineHeight: 23,
-color: '#222',
-marginBottom: 12,
-marginLeft: 20
+color: '#black',
+marginBottom: 15,
+marginLeft: 12,
+fontWeight: 600
 },
 
+
 destaque: {
-fontSize: 15,
-color: '#fff',
-backgroundColor: '#ff4081',
-textAlign: 'center',
-paddingVertical: 6,
-borderRadius: 20,
-fontWeight: '600',
-},
+  fontSize: 15,
+  color: '#000000',
+  backgroundColor: '#FF71B5',
+  textAlign: 'center',
+  paddingVertical: 2,
+  borderRadius: 15,
+  fontWeight: '600',
+  marginLeft: 4,
+  marginRight:4,
+  shadowRadius: 5,
+}, 
 });
