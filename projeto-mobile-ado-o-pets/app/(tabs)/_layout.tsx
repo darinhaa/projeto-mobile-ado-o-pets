@@ -2,6 +2,7 @@ import { HapticTab } from '@/components/haptic-tab';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -46,7 +47,7 @@ export default function TabLayout() {
         name="jor"
         options={{
           title: 'Pip',
-          tabBarIcon: ({ color }) => <FontAwesome5 name="themeisle" size={24} color="black" />
+          tabBarIcon: ({ color }) => <FontAwesome name="gratipay" size={24} color="black" />
         }}
 
         
@@ -72,7 +73,12 @@ export default function TabLayout() {
         }}
 
         
+        
       />
     </Tabs>
+
+    
+
+    
   );
 }

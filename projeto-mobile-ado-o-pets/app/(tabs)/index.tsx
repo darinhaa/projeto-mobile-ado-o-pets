@@ -1,99 +1,157 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
-
+import { Image } from 'expo-image';
+import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
+
+
+    <ScrollView style={estilos.view}>
+      <View style={estilos.imagem}>
         <Image
           source={require('@/assets/images/animais.jpg')}
-          style={styles.reactLogo}
+          style={estilos.imagemPet}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Seja bem vindo(a)!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Encontre seu mais novo animal aqui!</ThemedText>
-        <ThemedText>
-           <ThemedText type="defaultSemiBold">Nosso site está cheio de animais esperando por uma família
-          Vem dar uma olhada!</ThemedText> 
-          {' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: '',
-            })}
-          </ThemedText>{' '}
-         
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Porque adotar?</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+      </View>
 
-        <ThemedText>
-          {`Nesse exato momento, existem muitos animais esperando um humano para chamar de seu e um lar onde serão amados e cuidados..`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      <TouchableOpacity style={estilos.button} onPress={() => alert('Quero Adotar!')}>
+        <ThemedText style={estilos.buttonText}>QUERO ADOTAR!</ThemedText>
+      </TouchableOpacity>
+
+      <ThemedText style={estilos.nomePet}>Encontre seu mais novo animal aqui!
+        
+      
+    
+      </ThemedText>
+
+
+
+      
+  
+      <ThemedText style={estilos.textoHistoria}>
+      Nosso site está cheio de animais esperando por uma família
+      Vem dar uma olhada!      </ThemedText>
+
+      <ThemedText style={estilos.tituloHistoria}>Por que adotar?</ThemedText>
+
+
+      <ThemedText style={estilos.Historia}>
+      Nesse exato momento, existem muitos animais esperando um humano para chamar de seu e um lar onde serão amados e cuidados.     </ThemedText>
+
+     
+      
+    </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
+const estilos = StyleSheet.create({
+  view: {
+    height: '100%',
+    width: '100%'
+  },
+  button: {
+    backgroundColor: '#ff4081',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+    textTransform: 'uppercase',
+  },
+
+  containerTitulo: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    marginLeft: 20,
+    marginTop: 10,
   },
-  stepContainer: {
-    gap: 8,
+
+
+  nomePet: {
+    fontSize: 20,
+    fontWeight: '500',
+    color: '#D4B200',
+    textTransform: 'uppercase',
+    marginLeft: 10
+  },
+
+  idade: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#D4B200',
+    marginLeft: 6,
+  },
+  imagem: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingTop: 20,
+    paddingBottom: 20
+  },
+  imagemPet: {
+    height: 190,
+    width: 250,
+    borderRadius: 15,
+    shadowRadius: 34,
+  },
+
+  containerInfo: {
+    marginLeft: 20,
+    marginTop: 10,
+    marginBottom: 10,
+
+  },
+
+  local: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#333',
+    marginLeft: 20
+  },
+
+  data: {
+    fontSize: 14,
+    color: '#333',
+    marginTop: 2,
+    marginLeft: 20
+  },
+
+  containerHistoria: {
+    paddingHorizontal: 20,
+    marginTop: 10,
+
+  },
+
+  tituloHistoria: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#E91E63',
     marginBottom: 8,
+    marginLeft: 20
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+
+  textoHistoria: {
+    fontSize: 16,
+    lineHeight: 29,
+    color: 'black',
+    marginBottom: 16,
+    marginLeft: 20
   },
+
+  Historia: {
+    fontSize: 17,
+    lineHeight: 29,
+    color: 'black',
+    marginBottom: 16,
+    marginLeft: 20
+  },
+
+
+ 
+  
 });
