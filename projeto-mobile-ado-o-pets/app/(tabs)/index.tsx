@@ -1,44 +1,60 @@
 import { ThemedText } from '@/components/themed-text';
 import { Image } from 'expo-image';
-import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Linking, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 export default function HomeScreen() {
+    const handleAgendarVisita = () => {
+      Linking.openURL("https://calendly.com/seu-usuario/visita-pip"); 
+      // substituir pela minha api q vou criar
+    };
+  
   return (
 
 
     <ScrollView style={estilos.view}>
-      <View style={estilos.imagem}>
+      
+      <View style={estilos.logo}>
         <Image
-          source={require('@/assets/images/animais.jpg')}
-          style={estilos.imagemPet}
+          source={require('@/assets/images/aumigo.png')}
+          style={estilos.superior}
         />
       </View>
+
+
+      <View style={estilos.imagem}>
+        <Image
+          source={require('@/assets/images/caes.jpg')}
+          style={estilos.imagemPets}
+        />
+      </View>
+    
 
       <TouchableOpacity style={estilos.button} onPress={() => alert('Quero Adotar!')}>
         <ThemedText style={estilos.buttonText}>QUERO ADOTAR!</ThemedText>
       </TouchableOpacity>
 
-      <ThemedText style={estilos.nomePet}>Encontre seu mais novo animal aqui!
-        
-      
-    
+      <ThemedText style={estilos.Novoanimal}>Encontre seu mais novo animal aqui!
       </ThemedText>
 
-
-
-      
-  
       <ThemedText style={estilos.textoHistoria}>
-      Nosso site está cheio de animais esperando por uma família
-      Vem dar uma olhada!      </ThemedText>
 
-      <ThemedText style={estilos.tituloHistoria}>Por que adotar?</ThemedText>
-
-
-      <ThemedText style={estilos.Historia}>
-      Nesse exato momento, existem muitos animais esperando um humano para chamar de seu e um lar onde serão amados e cuidados.     </ThemedText>
-
-     
+        Nosso site está cheio de animais esperando por uma família
+Vem dar uma olhada!.
+      </ThemedText>
       
+      <ThemedText style={estilos.pqadotar}>Por que adotar?</ThemedText>
+
+      <ThemedText style={estilos.nesse}>
+
+      Nesse exato momento, existem muitos animais esperando um humano para chamar de seu e um lar onde serão amados e cuidados.
+</ThemedText>
+
+
+  
+
+
+    
+
+
     </ScrollView>
   );
 }
@@ -50,13 +66,18 @@ const estilos = StyleSheet.create({
   },
   button: {
     backgroundColor: '#ff4081',
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 25,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    shadowColor: '#B82B6F',
+    shadowRadius: 8,
     alignItems: 'center',
-    justifyContent: 'center',
     marginTop: 10,
+    marginLeft: 10,
+    marginRight: 10
   },
+
+
   buttonText: {
     color: 'white',
     fontWeight: 'bold',
@@ -64,6 +85,7 @@ const estilos = StyleSheet.create({
     textTransform: 'uppercase',
   },
 
+  
   containerTitulo: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -72,12 +94,12 @@ const estilos = StyleSheet.create({
   },
 
 
-  nomePet: {
+  Novoanimal: {
     fontSize: 20,
-    fontWeight: '500',
+    fontWeight: '700',
     color: '#D4B200',
     textTransform: 'uppercase',
-    marginLeft: 10
+    marginLeft: 20
   },
 
   idade: {
@@ -86,49 +108,45 @@ const estilos = StyleSheet.create({
     color: '#D4B200',
     marginLeft: 6,
   },
-  imagem: {
+
+  logo: {
+    height: 0,
+    width: 380,
+    shadowRadius: 20,
+    
+
+  },
+
+
+  superior: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     paddingTop: 20,
+    paddingBottom: 60,
+    shadowRadius: 10
+
+  },
+
+  imagem: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingTop: 105,
     paddingBottom: 20
   },
-  imagemPet: {
+
+  imagemPets: {
     height: 190,
-    width: 250,
+    width: 350,
     borderRadius: 15,
-    shadowRadius: 34,
+    shadowRadius: 24,
   },
 
-  containerInfo: {
-    marginLeft: 20,
-    marginTop: 10,
-    marginBottom: 10,
 
-  },
 
-  local: {
+  pqadotar: {
     fontSize: 16,
-    fontWeight: '500',
-    color: '#333',
-    marginLeft: 20
-  },
-
-  data: {
-    fontSize: 14,
-    color: '#333',
-    marginTop: 2,
-    marginLeft: 20
-  },
-
-  containerHistoria: {
-    paddingHorizontal: 20,
-    marginTop: 10,
-
-  },
-
-  tituloHistoria: {
-    fontSize: 20,
     fontWeight: '700',
     color: '#E91E63',
     marginBottom: 8,
@@ -136,22 +154,21 @@ const estilos = StyleSheet.create({
   },
 
   textoHistoria: {
-    fontSize: 16,
-    lineHeight: 29,
+    fontSize: 13,
+    lineHeight: 23,
     color: 'black',
-    marginBottom: 16,
+    marginBottom: 12,
     marginLeft: 20
   },
 
-  Historia: {
-    fontSize: 17,
-    lineHeight: 29,
+  nesse: {
+    fontSize: 13,
+    lineHeight: 23,
     color: 'black',
-    marginBottom: 16,
+    marginBottom: 12,
     marginLeft: 20
   },
 
 
- 
   
 });

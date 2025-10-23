@@ -1,17 +1,32 @@
 import { ThemedText } from '@/components/themed-text';
 import { Image } from 'expo-image';
-import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Linking, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 export default function HomeScreen() {
+    const handleAgendarVisita = () => {
+      Linking.openURL("https://calendly.com/seu-usuario/visita-pip"); 
+      // substituir pela minha api q vou criar
+    };
+  
   return (
 
 
     <ScrollView style={estilos.view}>
+      
+      <View style={estilos.logo}>
+        <Image
+          source={require('@/assets/images/aumigo.png')}
+          style={estilos.superior}
+        />
+      </View>
+
+
       <View style={estilos.imagem}>
         <Image
           source={require('@/assets/images/gato.jpg')}
           style={estilos.imagemPet}
         />
       </View>
+
       <ThemedText style={estilos.nomePet}>CIBELE | 1 ANO
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="16" fill="black" className="bi bi-share" viewBox="0 0 20 16">
           <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3" />
@@ -37,11 +52,11 @@ export default function HomeScreen() {
       <ThemedText style={estilos.data}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" className="bi bi-calendar-event-fill" viewBox="0 0 -40 16">
   <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5"/>
 </svg>
-         10/05/2025</ThemedText>
+         10/05/2024</ThemedText>
 
 
 
-      <ThemedText style={estilos.tituloHistoria}>HISTÓRIA DA CIBELE</ThemedText>
+      <ThemedText style={estilos.tituloHistoria}>HISTÓRIA DE CIBELE</ThemedText>
       <ThemedText style={estilos.textoHistoria}>
       Sou a Cibele, tenho 1 ano! Estou sendo enviada para a adoção porque minha mãe vai se mudar e não tem como me levar, sou dócil, carinhosa, gosto de passear, e amo crianças.
       </ThemedText>
@@ -51,6 +66,7 @@ export default function HomeScreen() {
       <TouchableOpacity style={estilos.button} onPress={() => alert('Quero Adotar!')}>
         <ThemedText style={estilos.buttonText}>QUERO ADOTAR!</ThemedText>
       </TouchableOpacity>
+
 
     </ScrollView>
   );
@@ -62,13 +78,16 @@ const estilos = StyleSheet.create({
     width: '100%'
   },
   button: {
-    backgroundColor: '#ff4081',
-    paddingVertical: 15,
-    paddingHorizontal: 30,
+    backgroundColor: '#FF71B5',
+    paddingVertical: 13,
+    paddingHorizontal: 15,
     borderRadius: 25,
+    shadowColor: '#B82B6F',
+    shadowRadius: 10,
     alignItems: 'center',
-    justifyContent: 'center',
     marginTop: 20,
+    marginLeft: 20,
+    marginRight: 20
   },
   buttonText: {
     color: 'white',
@@ -76,6 +95,16 @@ const estilos = StyleSheet.create({
     fontSize: 18,
     textTransform: 'uppercase',
   },
+
+  
+
+  textoBotao: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+    textTransform: 'uppercase',
+  },
+
 
   containerTitulo: {
     flexDirection: 'row',
@@ -99,18 +128,38 @@ const estilos = StyleSheet.create({
     color: '#D4B200',
     marginLeft: 6,
   },
-  imagem: {
+
+  logo: {
+    height: 0,
+    width: 380,
+    shadowRadius: 20,
+    
+
+  },
+
+
+  superior: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     paddingTop: 20,
+    paddingBottom: 60,
+    shadowRadius: 10
+
+  },
+  imagem: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingTop: 115,
     paddingBottom: 20
   },
+
   imagemPet: {
     height: 190,
     width: 250,
     borderRadius: 15,
-    shadowRadius: 34,
+    shadowRadius: 24,
   },
 
   containerInfo: {
@@ -143,26 +192,28 @@ const estilos = StyleSheet.create({
   tituloHistoria: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#E91E63',
+    color: 'FF71B5',
     marginBottom: 8,
     marginLeft: 20
   },
 
   textoHistoria: {
-    fontSize: 17,
-    lineHeight: 29,
+    fontSize: 13,
+    lineHeight: 23,
     color: 'black',
-    marginBottom: 16,
+    marginBottom: 12,
     marginLeft: 20
   },
 
   destaque: {
     fontSize: 15,
     color: '#fff',
-    backgroundColor: '#ff4081',
+    backgroundColor: '#FF71B5',
     textAlign: 'center',
     paddingVertical: 3,
     borderRadius: 100,
     fontWeight: '600',
   },
+
+  
 });

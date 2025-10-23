@@ -1,11 +1,25 @@
 import { ThemedText } from '@/components/themed-text';
 import { Image } from 'expo-image';
-import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity, View, Linking } from 'react-native';
 export default function HomeScreen() {
+    const handleAgendarVisita = () => {
+      Linking.openURL("https://calendly.com/seu-usuario/visita-pip"); 
+      // substituir pela minha api q vou criar
+    };
+  
   return (
 
 
     <ScrollView style={estilos.view}>
+      
+      <View style={estilos.logo}>
+        <Image
+          source={require('@/assets/images/aumigo.png')}
+          style={estilos.superior}
+        />
+      </View>
+
+
       <View style={estilos.imagem}>
         <Image
           source={require('@/assets/images/pip.png')}
@@ -54,6 +68,11 @@ export default function HomeScreen() {
         <ThemedText style={estilos.buttonText}>QUERO ADOTAR!</ThemedText>
       </TouchableOpacity>
 
+
+<TouchableOpacity style={estilos.botaoAgendar} onPress={handleAgendarVisita}>
+  <ThemedText style={estilos.textoBotao}>AGENDAR VISITA 🗓️</ThemedText>
+</TouchableOpacity>
+
     </ScrollView>
   );
 }
@@ -65,12 +84,15 @@ const estilos = StyleSheet.create({
   },
   button: {
     backgroundColor: '#ff4081',
-    paddingVertical: 15,
-    paddingHorizontal: 30,
+    paddingVertical: 13,
+    paddingHorizontal: 15,
     borderRadius: 25,
+    shadowColor: '#B82B6F',
+    shadowRadius: 10,
     alignItems: 'center',
-    justifyContent: 'center',
     marginTop: 20,
+    marginLeft: 20,
+    marginRight: 20
   },
   buttonText: {
     color: 'white',
@@ -78,6 +100,26 @@ const estilos = StyleSheet.create({
     fontSize: 18,
     textTransform: 'uppercase',
   },
+
+  botaoAgendar: {
+    backgroundColor: '#ff4081',
+    paddingVertical: 13,
+    paddingHorizontal: 15,
+    borderRadius: 25,
+    shadowColor: '#B82B6F',
+    shadowRadius: 10,
+    alignItems: 'center',
+    marginTop: 15,
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  textoBotao: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+    textTransform: 'uppercase',
+  },
+
 
   containerTitulo: {
     flexDirection: 'row',
@@ -101,18 +143,38 @@ const estilos = StyleSheet.create({
     color: '#D4B200',
     marginLeft: 6,
   },
-  imagem: {
+
+  logo: {
+    height: 0,
+    width: 380,
+    shadowRadius: 20,
+    
+
+  },
+
+
+  superior: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     paddingTop: 20,
+    paddingBottom: 60,
+    shadowRadius: 10
+
+  },
+  imagem: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingTop: 115,
     paddingBottom: 20
   },
+
   imagemPet: {
     height: 190,
     width: 250,
     borderRadius: 15,
-    shadowRadius: 34,
+    shadowRadius: 24,
   },
 
   containerInfo: {
@@ -167,4 +229,6 @@ const estilos = StyleSheet.create({
     borderRadius: 100,
     fontWeight: '600',
   },
+
+  
 });
