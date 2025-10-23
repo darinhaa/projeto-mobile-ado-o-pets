@@ -44,11 +44,11 @@ export default function HomeScreen() {
 
 
 
-      <ThemedText style={estilos.local}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" className="bi bi-geo-alt-fill" viewBox="0 0 -40 16">
+      <ThemedText style={estilos.local}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="#EECA06" className="bi bi-geo-alt-fill" viewBox="0 0 -40 16">
   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
 </svg> 
         Curitiba, Batel</ThemedText>
-      <ThemedText style={estilos.data}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" className="bi bi-calendar-event-fill" viewBox="0 0 -40 16">
+      <ThemedText style={estilos.data}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="#EECA06" className="bi bi-calendar-event-fill" viewBox="0 0 -40 16">
   <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5"/>
 </svg>
          28/07/2025</ThemedText>
@@ -69,9 +69,6 @@ export default function HomeScreen() {
       </TouchableOpacity>
 
 
-<TouchableOpacity style={estilos.botaoAgendar} onPress={handleAgendarVisita}>
-  <ThemedText style={estilos.textoBotao}>AGENDAR VISITA 🗓️</ThemedText>
-</TouchableOpacity>
 
     </ScrollView>
   );
@@ -83,7 +80,7 @@ const estilos = StyleSheet.create({
     width: '100%'
   },
   button: {
-    backgroundColor: '#ff4081',
+    backgroundColor: '#FF71B5',
     paddingVertical: 13,
     paddingHorizontal: 15,
     borderRadius: 25,
@@ -101,24 +98,7 @@ const estilos = StyleSheet.create({
     textTransform: 'uppercase',
   },
 
-  botaoAgendar: {
-    backgroundColor: '#ff4081',
-    paddingVertical: 13,
-    paddingHorizontal: 15,
-    borderRadius: 25,
-    shadowColor: '#B82B6F',
-    shadowRadius: 10,
-    alignItems: 'center',
-    marginTop: 15,
-    marginLeft: 20,
-    marginRight: 20,
-  },
-  textoBotao: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 18,
-    textTransform: 'uppercase',
-  },
+  
 
 
   containerTitulo: {
@@ -132,7 +112,7 @@ const estilos = StyleSheet.create({
   nomePet: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#D4B200',
+    color: '#EECA06',
     textTransform: 'uppercase',
     marginLeft: 20
   },
@@ -140,7 +120,7 @@ const estilos = StyleSheet.create({
   idade: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#D4B200',
+    color: '#EECA06',
     marginLeft: 6,
   },
 
@@ -188,14 +168,14 @@ const estilos = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     color: '#333',
-    marginLeft: 20
+    marginLeft: 12
   },
 
   data: {
     fontSize: 14,
     color: '#333',
     marginTop: 2,
-    marginLeft: 20
+    marginLeft: 13
   },
 
   containerHistoria: {
@@ -207,7 +187,7 @@ const estilos = StyleSheet.create({
   tituloHistoria: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#E91E63',
+    color: '#FF71B5',
     marginBottom: 8,
     marginLeft: 20
   },
@@ -223,12 +203,14 @@ const estilos = StyleSheet.create({
   destaque: {
     fontSize: 15,
     color: '#fff',
-    backgroundColor: '#ff4081',
+    backgroundColor: '#FF71B5',
     textAlign: 'center',
     paddingVertical: 3,
     borderRadius: 100,
     fontWeight: '600',
   },
+
+  
 
   
 });
