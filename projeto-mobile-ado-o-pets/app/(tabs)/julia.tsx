@@ -165,7 +165,7 @@ const estilos = StyleSheet.create({
   },
 
   tituloHistoria: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '700',
     color: '#FF71B5',
     marginBottom: 8,
