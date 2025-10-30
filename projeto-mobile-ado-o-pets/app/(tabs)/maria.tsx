@@ -11,7 +11,7 @@ return (
 <ScrollView style={estilos.view}>
 <View style={estilos.logo}>
         <Image
-          source={require('@/assets/images/logo_aumigo.png')}
+          source={require('@/assets/images/aumigo.png')}
           style={estilos.superior}
         />
       </View>
