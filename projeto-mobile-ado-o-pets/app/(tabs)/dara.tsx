@@ -1,33 +1,31 @@
 import { ThemedText } from '@/components/themed-text';
 import { Image } from 'expo-image';
 import { Linking, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
-export default function HomeScreen() {
+
+  export default function HomeScreen() {
     const handleAgendarVisita = () => {
       Linking.openURL("https://calendly.com/seu-usuario/visita-pip"); 
       // substituir pela minha api q vou criar
     };
-  
   return (
 
 
     <ScrollView style={estilos.view}>
-      
       <View style={estilos.logo}>
         <Image
           source={require('@/assets/images/aumigo.png')}
           style={estilos.superior}
         />
       </View>
-
-
+      
       <View style={estilos.imagem}>
+      
         <Image
           source={require('@/assets/images/gato.jpg')}
           style={estilos.imagemPet}
         />
       </View>
-
-      <ThemedText style={estilos.nomePet}>CIBELE | 1 ANO
+      <ThemedText style={estilos.nomePet}> CIBELE | 1 ANO
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="16" fill="black" className="bi bi-share" viewBox="0 0 20 16">
           <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3" />
         </svg>
@@ -48,11 +46,13 @@ export default function HomeScreen() {
       <ThemedText style={estilos.local}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" className="bi bi-geo-alt-fill" viewBox="0 0 -40 16">
   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
 </svg> 
-        Curitiba, Centro</ThemedText>
+ <ThemedText>Curitiba, Centro</ThemedText>
+        </ThemedText>
       <ThemedText style={estilos.data}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" className="bi bi-calendar-event-fill" viewBox="0 0 -40 16">
   <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5"/>
 </svg>
-         10/05/2024</ThemedText>
+<ThemedText>  10/05/2024</ThemedText>
+     </ThemedText>
 
 
 
@@ -63,10 +63,10 @@ export default function HomeScreen() {
       <ThemedText style={estilos.destaque}>
         Adote a Cibele e traga mais felicidade para a sua vida!
       </ThemedText>
-      <TouchableOpacity style={estilos.button} onPress={() => alert('Quero Adotar!')}>
-        <ThemedText style={estilos.buttonText}>QUERO ADOTAR!</ThemedText>
-      </TouchableOpacity>
-
+    
+      <TouchableOpacity style={estilos.botaoAgendar} onPress={handleAgendarVisita}>
+  <ThemedText style={estilos.textoBotao}>QUERO ADOTAR!</ThemedText>
+</TouchableOpacity>
 
     </ScrollView>
   );
@@ -77,34 +77,30 @@ const estilos = StyleSheet.create({
     height: '100%',
     width: '100%'
   },
-  button: {
-    backgroundColor: '#FF71B5',
+
+  buttonText: {
+    color: 'white',
+    fontWeight: 800,
+    fontSize: 18,  
+  },
+  botaoAgendar: {
+    backgroundColor: '#EECA06',
     paddingVertical: 13,
     paddingHorizontal: 15,
     borderRadius: 25,
-    shadowColor: '#B82B6F',
+    shadowColor: '#000000',
     shadowRadius: 10,
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 15,
     marginLeft: 20,
-    marginRight: 20
+    marginRight: 20,
   },
-  buttonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 18,
-    textTransform: 'uppercase',
-  },
-
-  
-
   textoBotao: {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 18,
     textTransform: 'uppercase',
   },
-
 
   containerTitulo: {
     flexDirection: 'row',
@@ -115,9 +111,9 @@ const estilos = StyleSheet.create({
 
 
   nomePet: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: '700',
-    color: '#D4B200',
+    color: '#EECA06',
     textTransform: 'uppercase',
     marginLeft: 20
   },
@@ -125,27 +121,8 @@ const estilos = StyleSheet.create({
   idade: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#D4B200',
+    color: '#EECA06',
     marginLeft: 6,
-  },
-
-  logo: {
-    height: 0,
-    width: 380,
-    shadowRadius: 20,
-    
-
-  },
-
-
-  superior: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    paddingTop: 20,
-    paddingBottom: 60,
-    shadowRadius: 10
-
   },
   imagem: {
     display: 'flex',
@@ -154,7 +131,6 @@ const estilos = StyleSheet.create({
     paddingTop: 115,
     paddingBottom: 20
   },
-
   imagemPet: {
     height: 190,
     width: 250,
@@ -166,54 +142,74 @@ const estilos = StyleSheet.create({
     marginLeft: 20,
     marginTop: 10,
     marginBottom: 10,
-
   },
 
   local: {
     fontSize: 16,
     fontWeight: '500',
-    color: '#333',
+    color: '#EECA06',
     marginLeft: 20
   },
 
   data: {
     fontSize: 14,
-    color: '#333',
+    color: '#EECA06',
     marginTop: 2,
-    marginLeft: 20
+    marginLeft: 20,
+    fontWeight: 'bold',
   },
 
   containerHistoria: {
     paddingHorizontal: 20,
     marginTop: 10,
-
   },
 
   tituloHistoria: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '700',
-    color: 'FF71B5',
+    color: '#FF71B5',
     marginBottom: 8,
     marginLeft: 20
   },
 
   textoHistoria: {
-    fontSize: 13,
+    fontSize: 16,
     lineHeight: 23,
     color: 'black',
-    marginBottom: 12,
-    marginLeft: 20
+    marginBottom: 15,
+    marginLeft: 20,
+    fontWeight: 600,
   },
 
   destaque: {
     fontSize: 15,
-    color: '#fff',
+    color: '#000000',
     backgroundColor: '#FF71B5',
     textAlign: 'center',
-    paddingVertical: 3,
-    borderRadius: 100,
+    paddingVertical: 2,
+    borderRadius: 15,
     fontWeight: '600',
+    marginLeft: 15,
+    marginRight: 15,
+    shadowRadius: 5,
   },
-
   
+logo: {
+  height: 0,
+  width: 380,
+  shadowRadius: 20,
+  
+
+},
+
+
+superior: {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  paddingTop: 20,
+  paddingBottom: 60,
+  shadowRadius: 10
+
+},
 });
