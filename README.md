@@ -3,6 +3,9 @@ O Aumigo é um site criado para facilitar a adoção de animais, conectando pess
 
 Para sua criação, foi utilizado React Native, aliado a um framework baseado em HTML e CSS, permitindo a construção de interfaces modernas, responsivas e compatíveis com dispositivos móveis. O uso dessas tecnologias garante uma experiência fluida, visualmente agradável e fácil de usar, refletindo o propósito central do projeto: aproximar pessoas e pets de forma humanizada e eficiente.
 
+# Protótipo do figma
+https://www.figma.com/design/vDqQSQdcUFqqYutJde95lD/Sem-t%C3%ADtulo?node-id=0-1&t=tbbggZoU2f6sji10-1
+
 
 # Tela inicial
 A tela inicial apresenta um banner com a imagem de vários pets, reforçando o propósito do site. Logo abaixo, há um botão chamativo “Quero adotar!”, que leva o usuário para a área de listagem dos animais disponíveis.
